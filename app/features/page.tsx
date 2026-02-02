@@ -9,7 +9,7 @@ export default function FeaturesPage() {
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-blue-600">Why EduFlow?</h2>
+            <h2 className="text-2xl font-semibold leading-7 text-blue-600">Why EduFlow?</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Tools tailored for ambitious learners
             </p>
