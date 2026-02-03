@@ -1,23 +1,29 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import { useAuthStore } from "@/store/useAuthStore";
+import { useRouter } from "next/navigation";
 
 const Signup = () => {
+  const router = useRouter();
+  const { signup, loading, error, user } = useAuthStore();
   const [fullName, setFullName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
+
 
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
-    // Simulate API call
-    console.log("Registering:", { fullName, email, password });
-    setTimeout(() => {
-      setLoading(false);
-      alert("Account created successfully!");
-    }, 1000);
+
+    await signup({
+      full_name: fullName,
+      email,
+      password,
+    });
+       console.log(user)
+    if (user) router.push("/role-selection");
   };
+  
 
   const handleGoogleSignup = () => {
     console.log("Triggering Google OAuth...");
