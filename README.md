@@ -3,6 +3,8 @@ This is a ![Uploading ChatGPT Image Feb 2, 2026, 11_22_36 PM.png…]()
 
 ## Getting Started
 
+APIS - https://github.com/Ssharma0355/eduflow-ai-server.git
+
 First, run the development server:
 
 ```bash
