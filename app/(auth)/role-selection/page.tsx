@@ -2,20 +2,23 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useAuthStore } from "@/store/useAuthStore";
+
 
 export default function RoleSelection() {
+  const { updateRole, user, loading } = useAuthStore();
   const router = useRouter();
   const [selectedRole, setSelectedRole] = useState<"CLIENT" | "EXPERT" | null>(null);
 
-  const handleContinue = () => {
+  const handleContinue = async () => {
     if (!selectedRole) return;
-    // Here you would typically update the user's profile in your DB
-    console.log("Role Selected:", selectedRole);
-    
-    // Redirect logic
+  
+    await updateRole(selectedRole);
+  
     if (selectedRole === "CLIENT") router.push("/client/dashboard");
     else router.push("/expert/dashboard");
   };
+  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">

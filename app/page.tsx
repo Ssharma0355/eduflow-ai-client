@@ -5,6 +5,7 @@ import Footer from "@/components/marketing/Footer";
 import Link from "next/link";
 
 export default function LandingPage() {
+
   return (
     <div className="bg-white min-h-screen flex flex-col">
       {/* 1. Navigation */}
