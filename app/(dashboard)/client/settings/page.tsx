@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Client = () => {
+const Settings = () => {
   return (
     <div>
-      
+      Settings
     </div>
   )
 }
 
-export default Client
+export default Settings

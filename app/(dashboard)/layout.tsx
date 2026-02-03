@@ -1,13 +1,15 @@
 import Sidebar from "./Sidebar";
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="flex bg-gray-50 min-h-screen">
       <Sidebar />
-      <main className="pl-64">
-        <div className="max-w-7xl mx-auto px-8 py-8">
-          {children}
-        </div>
+      
+      {/* md:ml-64 adds space on desktop so content isn't hidden.
+         On mobile, the margin is 0 because the sidebar is hidden/overlay.
+      */}
+      <main className="flex-1 md:ml-64 p-8">
+        {children}
       </main>
     </div>
   );
