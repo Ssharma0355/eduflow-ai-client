@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAuthStore } from "@/store/useAuthStore";
 import { useRouter } from "next/navigation";
@@ -21,8 +21,12 @@ const Signup = () => {
       password,
     });
        console.log(user)
-    if (user) router.push("/role-selection");
   };
+  useEffect(() => {
+    if (user) {
+      router.push("/role-selection");
+    }
+  }, [user, router]);
   
 
   const handleGoogleSignup = () => {
