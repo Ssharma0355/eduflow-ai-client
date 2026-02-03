@@ -15,8 +15,10 @@ export default function RoleSelection() {
   
     await updateRole(selectedRole);
   
-    if (selectedRole === "CLIENT") router.push("/client/dashboard");
-    else router.push("/expert/dashboard");
+    // if (selectedRole === "CLIENT") router.push("/client/dashboard");
+    // else router.push("/expert/dashboard");
+    if (selectedRole === "CLIENT") router.push("/client-verification");
+    else router.push("/expert-verification");
   };
   
 
