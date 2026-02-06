@@ -98,6 +98,8 @@ const ClientVerification = () => {
             </div>
 
             {/* OTP Section - Only show if not yet verified */}
+            {/* OTP Section - Only show if not yet verified */}
+
             {!isEmailVerified && (
               <>
                 {otpSent && (
